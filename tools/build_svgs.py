@@ -93,6 +93,14 @@ def rotating(lines, x, y, size, color, each=4.0):
     return "\n".join(out)
 
 
+UA = {"User-Agent": "Mozilla/5.0 (compatible; robwizzie-profile/1.0; +https://github.com/robwizzie)", "Accept": "application/json"}
+
+
+def get_json(url):
+    with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=15) as r:
+        return json.load(r)
+
+
 def fetch_live():
     """Live numbers for the header. Falls back to the last saved values if a source is down."""
     cache_path = ASSETS / "live.json"
@@ -101,15 +109,13 @@ def fetch_live():
     except Exception:
         live = {}
     try:
-        with urllib.request.urlopen("https://mad.mindgoblin.tech/public/stats", timeout=15) as r:
-            s = json.load(r)
+        s = get_json("https://mad.mindgoblin.tech/public/stats")
         live["mad"] = {k: s[k] for k in ("total_users", "total_miles", "miles_today")}
     except Exception as e:
         print("Mile A Day stats unavailable, keeping last values:", e)
     try:
         url = "https://raw.githubusercontent.com/robwizzie/top-dogs-pool/main/data/apa.json"
-        with urllib.request.urlopen(url, timeout=15) as r:
-            team = json.load(r)["team"]
+        team = get_json(url)["team"]
         live["dawgs"] = {
             "wins": team["record"]["wins"],
             "losses": team["record"]["losses"],
