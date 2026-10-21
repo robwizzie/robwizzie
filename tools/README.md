@@ -1,9 +1,6 @@
 # tools
 
-- `build_svgs.py` builds `assets/header.svg`.
-- `cards.py` builds the project preview cards in `assets/projects/`.
-- `stickers/` holds the Flamey sticker from the Mile A Day app used in the header.
+- `build_svgs.py` builds `assets/header.svg`, pulling live numbers from the Mile A Day public stats API and the Top Dawgs data file. `.github/workflows/live-header.yml` reruns it every 3 hours. If a source is down, the last values in `assets/live.json` are kept.
+- `cards.py` builds the project preview cards in `assets/projects/` (needs Pillow).
 
-```bash
-python3 tools/build_svgs.py
-```
+Flamey is drawn from the same vector as the Mile A Day merch.
