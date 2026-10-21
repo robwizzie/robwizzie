@@ -18,41 +18,41 @@ I'm a full-stack and iOS developer in South Jersey. I lead development at a test
 <tr>
 <td width="50%" valign="top">
 <a href="https://robwiscount.org"><img src="assets/projects/personal-site.png" alt="robwiscount.org" /></a>
-<p><a href="https://robwiscount.org"><b>robwiscount.org</b></a><br/>My portfolio, with live visitor cursors, a guestbook and a game you can play right on the page.<br/><sub>HTML · CSS · JavaScript · Cloudflare Workers</sub></p>
+<p><a href="https://robwiscount.org"><b>robwiscount.org</b></a><br/>My portfolio, with live visitor cursors, a guestbook and a game you can play right on the page.<br/><sub>HTML · CSS · JavaScript · Cloudflare Workers</sub><br/><br/></p>
 </td>
 <td width="50%" valign="top">
 <a href="https://github.com/robwizzie/Mile-A-Day"><img src="assets/projects/mile-a-day.png" alt="Mile A Day" /></a>
-<p><a href="https://github.com/robwizzie/Mile-A-Day"><b>Mile A Day</b></a><br/>Run or walk a mile every day and keep Flamey alive. Streaks, friend races, widgets and a watchOS app.<br/><sub>SwiftUI · HealthKit · Express · PostgreSQL</sub></p>
+<p><a href="https://github.com/robwizzie/Mile-A-Day"><b>Mile A Day</b></a><br/>Run or walk a mile every day and keep Flamey alive. Streaks, friend races, widgets and a watchOS app.<br/><sub>SwiftUI · HealthKit · Express · PostgreSQL</sub><br/><br/></p>
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 <a href="https://github.com/robwizzie/top-dogs-pool"><img src="assets/projects/top-dawgs.png" alt="Top Dawgs" /></a>
-<p><a href="https://github.com/robwizzie/top-dogs-pool"><b>Top Dawgs</b></a><br/>Home base for my APA pool team: stats scraped from the league portal, match recaps, drills and live scoring.<br/><sub>Next.js · Supabase · Playwright</sub></p>
+<p><a href="https://github.com/robwizzie/top-dogs-pool"><b>Top Dawgs</b></a><br/>Home base for my APA pool team: stats scraped from the league portal, match recaps, drills and live scoring.<br/><sub>Next.js · Supabase · Playwright</sub><br/><br/></p>
 </td>
 <td width="50%" valign="top">
 <a href="https://github.com/robwizzie/Dialed"><img src="assets/projects/dialed.png" alt="Dialed" /></a>
-<p><a href="https://github.com/robwizzie/Dialed"><b>Dialed</b></a><br/>My personal health app. It turns sleep, workouts, water and food into one daily score and a plan for the day.<br/><sub>SwiftUI · HealthKit · SwiftData</sub></p>
+<p><a href="https://github.com/robwizzie/Dialed"><b>Dialed</b></a><br/>My personal health app. It turns sleep, workouts, water and food into one daily score and a plan for the day.<br/><sub>SwiftUI · HealthKit · SwiftData</sub><br/><br/></p>
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 <a href="https://github.com/robwizzie/jawn-legends"><img src="assets/projects/jawn-legends.png" alt="Jawn Legends" /></a>
-<p><a href="https://github.com/robwizzie/jawn-legends"><b>Jawn Legends</b></a><br/>A Philly monster-catching game for iPhone that I made as a gift for a friend. Pixel art, battles and card packs.<br/><sub>JavaScript · Canvas · Capacitor</sub></p>
+<p><a href="https://github.com/robwizzie/jawn-legends"><b>Jawn Legends</b></a><br/>A Philly monster-catching game for iPhone that I made as a gift for a friend. Pixel art, battles and card packs.<br/><sub>JavaScript · Canvas · Capacitor</sub><br/><br/></p>
 </td>
 <td width="50%" valign="top">
 <a href="https://github.com/robwizzie/pick-5"><img src="assets/projects/pick5.png" alt="Pick5" /></a>
-<p><a href="https://github.com/robwizzie/pick-5"><b>Pick5</b></a><br/>Weekly NFL pick'em for the group chat. Picks are scored by the odds, so calling the upset pays more.<br/><sub>Next.js · MongoDB · NextAuth</sub></p>
+<p><a href="https://github.com/robwizzie/pick-5"><b>Pick5</b></a><br/>Weekly NFL pick'em for the group chat. Picks are scored by the odds, so calling the upset pays more.<br/><sub>Next.js · MongoDB · NextAuth</sub><br/><br/></p>
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 <a href="https://github.com/robwizzie/troubled-brewing"><img src="assets/projects/trouble-brewing.png" alt="Trouble Brewing" /></a>
-<p><a href="https://github.com/robwizzie/troubled-brewing"><b>Trouble Brewing</b></a><br/>Website and custom CMS for a Haddon Heights coffee shop, with an animated fox who helps you pick a drink.<br/><sub>React · Vite · Supabase · GSAP</sub></p>
+<p><a href="https://github.com/robwizzie/troubled-brewing"><b>Trouble Brewing</b></a><br/>Website and custom CMS for a Haddon Heights coffee shop, with an animated fox who helps you pick a drink.<br/><sub>React · Vite · Supabase · GSAP</sub><br/><br/></p>
 </td>
 <td width="50%" valign="top">
 <a href="https://github.com/robwizzie/responsive-juice-website"><img src="assets/projects/juice.png" alt="Pressed By J&H" /></a>
-<p><a href="https://github.com/robwizzie/responsive-juice-website"><b>Pressed By J&amp;H</b></a><br/>Storefront for a South Jersey cold-pressed juice company, with Stripe checkout.<br/><sub>HTML · CSS · Node · Stripe</sub></p>
+<p><a href="https://github.com/robwizzie/responsive-juice-website"><b>Pressed By J&amp;H</b></a><br/>Storefront for a South Jersey cold-pressed juice company, with Stripe checkout.<br/><sub>HTML · CSS · Node · Stripe</sub><br/><br/></p>
 </td>
 </tr>
 </table>
