@@ -11,12 +11,13 @@
   </linearGradient>
   <clipPath id="card"><rect width="1200" height="360" rx="18"/></clipPath>
   
-  <linearGradient id="flamey-body" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#ffe25a"/><stop offset="0.45" stop-color="#ff9a2e"/><stop offset="1" stop-color="#ff4b24"/>
+  <linearGradient id="fl-outer" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#ffef4a"/><stop offset="0.5" stop-color="#ff9500"/><stop offset="1" stop-color="#ff3a1a"/>
   </linearGradient>
-  <linearGradient id="flamey-core" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#fff3a0"/><stop offset="1" stop-color="#ffc24a"/>
+  <linearGradient id="fl-inner" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#ffe95a"/><stop offset="1" stop-color="#ff9a26"/>
   </linearGradient>
+  <clipPath id="fl-mouth"><path d="M438 905 Q600 990 760 905 C 745 1075, 455 1075, 438 905 Z"/></clipPath>
 </defs>
 <g clip-path="url(#card)">
   <rect width="1200" height="360" fill="url(#bg)"/>
@@ -29,19 +30,19 @@
 <text x="66" y="168" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="17" fill="#8f8780" opacity="0">By day: the platform behind a test-prep company. By night: side projects.<animate attributeName="opacity" dur="12.0s" repeatCount="indefinite" keyTimes="0;0.3333;0.3625;0.6375;0.6667;1" values="0;0;1;1;0;0"/></text>
 <text x="66" y="168" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="17" fill="#8f8780" opacity="0">Currently turning my living room TV into a custom home screen.<animate attributeName="opacity" dur="12.0s" repeatCount="indefinite" keyTimes="0;0.6667;0.6958;0.9708;1.0000;1" values="0;0;1;1;0;0"/></text>
   <g transform="translate(64 192)"><rect width="137" height="34" rx="17" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.12"/><circle cx="17" cy="17" r="4" fill="#7aa2ff"/><text x="29" y="22.5" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="15" fill="#e7e1db">South Jersey</text></g><g transform="translate(213 192)"><rect width="249" height="34" rx="17" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.12"/><circle cx="17" cy="17" r="4" fill="#5ccf8a"/><text x="29" y="22.5" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="15" fill="#e7e1db">Shipping on the App Store</text></g>
-  <g transform="translate(948 40) scale(0.72)">
-    <g><animateTransform attributeName="transform" type="translate" values="0 0;0 -8;0 0" dur="2.4s" repeatCount="indefinite"/>
+  <g transform="translate(936 36) scale(0.14)">
+    <g><animateTransform attributeName="transform" type="translate" values="0 0;0 -50;0 0" dur="2.4s" repeatCount="indefinite"/>
     <g>
-  <g><rect x="66" y="176" width="26" height="50" rx="13" fill="#ff5a2a"/><ellipse cx="79" cy="226" rx="20" ry="9" fill="#ff4b24"/></g><g><rect x="108" y="176" width="26" height="50" rx="13" fill="#ff5a2a"/><ellipse cx="121" cy="226" rx="20" ry="9" fill="#ff4b24"/></g>
-  <g><path d="M44 132 C 30 118, 26 100, 30 88" stroke="#ff7a2a" stroke-width="18" stroke-linecap="round" fill="none"/><circle cx="30" cy="84" r="13" fill="#ff9a3a"/></g><g><path d="M156 132 C 170 118, 174 100, 170 88" stroke="#ff7a2a" stroke-width="18" stroke-linecap="round" fill="none"/><circle cx="170" cy="84" r="13" fill="#ff9a3a"/><animateTransform attributeName="transform" type="rotate" dur="2.4s" repeatCount="indefinite" keyTimes="0;0.12;0.24;0.36;0.48;1" values="0 156 132;22 156 132;-6 156 132;22 156 132;0 156 132;0 156 132"/></g>
-  <path d="M100 6 C 128 40, 168 76, 166 136 C 164 176, 136 194, 100 194 C 64 194, 36 176, 34 136 C 32 104, 46 84, 60 70 C 62 88, 68 98, 76 102 C 72 66, 82 36, 100 6 Z" fill="url(#flamey-body)" stroke="#fff" stroke-opacity="0.35" stroke-width="3"/>
-  <path d="M100 66 C 112 86, 124 104, 120 128 C 116 144, 84 144, 80 128 C 76 108, 90 90, 100 66 Z" fill="url(#flamey-core)"/>
-  <ellipse cx="78" cy="132" rx="11" ry="13" fill="#2a1410"><animate attributeName="ry" values="13;13;1.5;13;13" keyTimes="0;0.9;0.93;0.96;1" dur="4s" repeatCount="indefinite"/></ellipse>
-  <ellipse cx="122" cy="132" rx="11" ry="13" fill="#2a1410"><animate attributeName="ry" values="13;13;1.5;13;13" keyTimes="0;0.9;0.93;0.96;1" dur="4s" repeatCount="indefinite"/></ellipse>
-  <circle cx="74" cy="127" r="3.5" fill="#fff"><animate attributeName="opacity" values="1;1;0;1;1" keyTimes="0;0.9;0.93;0.96;1" dur="4s" repeatCount="indefinite"/></circle>
-  <circle cx="118" cy="127" r="3.5" fill="#fff"><animate attributeName="opacity" values="1;1;0;1;1" keyTimes="0;0.9;0.93;0.96;1" dur="4s" repeatCount="indefinite"/></circle>
-  <path d="M78 152 C 86 172, 114 172, 122 152 Z" fill="#2a1410"/>
-  <path d="M90 164 C 96 170, 104 170, 110 164 C 106 160, 94 160, 90 164 Z" fill="#ff6f7d"/>
+  
+  <path d="M600 22 C 700 120, 805 190, 810 305 C 813 350, 800 390, 785 418 C 840 570, 1012 680, 1012 870 C 1012 1080, 860 1175, 600 1175 C 340 1175, 185 1080, 185 860 C 185 790, 220 740, 285 672 C 265 590, 270 520, 300 500 C 320 470, 350 475, 382 503 C 375 300, 440 150, 600 22 Z" fill="url(#fl-outer)"/>
+  <path d="M612 420 C 660 500, 760 560, 665 672 C 668 710, 690 740, 715 765 L 808 900 C 808 1030, 710 1090, 600 1090 C 490 1090, 392 1030, 392 900 L 482 745 C 515 640, 515 520, 612 420 Z" fill="url(#fl-inner)"/>
+  <ellipse cx="426" cy="808" rx="72" ry="93" fill="#33120a"><animate attributeName="ry" values="93;93;8;93;93" keyTimes="0;0.9;0.93;0.96;1" dur="4s" repeatCount="indefinite"/></ellipse>
+  <ellipse cx="774" cy="808" rx="72" ry="93" fill="#33120a"><animate attributeName="ry" values="93;93;8;93;93" keyTimes="0;0.9;0.93;0.96;1" dur="4s" repeatCount="indefinite"/></ellipse>
+  <circle cx="404" cy="772" r="21" fill="#fff"><animate attributeName="opacity" values="1;1;0;1;1" keyTimes="0;0.9;0.93;0.96;1" dur="4s" repeatCount="indefinite"/></circle>
+  <circle cx="752" cy="772" r="21" fill="#fff"><animate attributeName="opacity" values="1;1;0;1;1" keyTimes="0;0.9;0.93;0.96;1" dur="4s" repeatCount="indefinite"/></circle>
+  <path d="M438 905 Q600 990 760 905 C 745 1075, 455 1075, 438 905 Z" fill="#3d0a0a"/>
+  <rect x="533" y="992" width="134" height="64" rx="28" fill="#ff6b5a" clip-path="url(#fl-mouth)"/>
+  
 </g></g>
   </g>
 
@@ -53,21 +54,21 @@
     <animate attributeName="width" values="0;1072;1072;0" keyTimes="0;0.85;0.97;1" dur="14s" repeatCount="indefinite"/>
   </rect>
   <g>
-    <animateTransform attributeName="transform" type="translate" values="44 0;1116 0;1116 0;44 0" keyTimes="0;0.85;0.97;1" dur="14s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="42 0;1114 0;1114 0;42 0" keyTimes="0;0.85;0.97;1" dur="14s" repeatCount="indefinite"/>
     <animate attributeName="opacity" values="1;1;1;0;1" keyTimes="0;0.85;0.95;0.97;1" dur="14s" repeatCount="indefinite"/>
-    <g transform="translate(0 238) scale(0.2)">
-      <g><animateTransform attributeName="transform" type="translate" values="0 0;0 -14;0 0" dur="0.225s" repeatCount="indefinite"/>
-      <g transform="rotate(8 100 120)">
-  <g><rect x="66" y="176" width="26" height="50" rx="13" fill="#ff5a2a"/><ellipse cx="79" cy="226" rx="20" ry="9" fill="#ff4b24"/><animateTransform attributeName="transform" type="rotate" dur="0.45s" repeatCount="indefinite" values="28 79 180;-28 79 180;28 79 180"/></g><g><rect x="108" y="176" width="26" height="50" rx="13" fill="#ff5a2a"/><ellipse cx="121" cy="226" rx="20" ry="9" fill="#ff4b24"/><animateTransform attributeName="transform" type="rotate" dur="0.45s" repeatCount="indefinite" values="-28 121 180;28 121 180;-28 121 180"/></g>
-  <g><path d="M44 132 C 30 118, 26 100, 30 88" stroke="#ff7a2a" stroke-width="18" stroke-linecap="round" fill="none"/><circle cx="30" cy="84" r="13" fill="#ff9a3a"/><animateTransform attributeName="transform" type="rotate" dur="0.45s" repeatCount="indefinite" values="-20 44 132;20 44 132;-20 44 132"/></g><g><path d="M156 132 C 170 118, 174 100, 170 88" stroke="#ff7a2a" stroke-width="18" stroke-linecap="round" fill="none"/><circle cx="170" cy="84" r="13" fill="#ff9a3a"/><animateTransform attributeName="transform" type="rotate" dur="0.45s" repeatCount="indefinite" values="20 156 132;-20 156 132;20 156 132"/></g>
-  <path d="M100 6 C 128 40, 168 76, 166 136 C 164 176, 136 194, 100 194 C 64 194, 36 176, 34 136 C 32 104, 46 84, 60 70 C 62 88, 68 98, 76 102 C 72 66, 82 36, 100 6 Z" fill="url(#flamey-body)" stroke="#fff" stroke-opacity="0.35" stroke-width="3"/>
-  <path d="M100 66 C 112 86, 124 104, 120 128 C 116 144, 84 144, 80 128 C 76 108, 90 90, 100 66 Z" fill="url(#flamey-core)"/>
-  <ellipse cx="78" cy="132" rx="11" ry="13" fill="#2a1410"><animate attributeName="ry" values="13;13;1.5;13;13" keyTimes="0;0.9;0.93;0.96;1" dur="4s" repeatCount="indefinite"/></ellipse>
-  <ellipse cx="122" cy="132" rx="11" ry="13" fill="#2a1410"><animate attributeName="ry" values="13;13;1.5;13;13" keyTimes="0;0.9;0.93;0.96;1" dur="4s" repeatCount="indefinite"/></ellipse>
-  <circle cx="74" cy="127" r="3.5" fill="#fff"><animate attributeName="opacity" values="1;1;0;1;1" keyTimes="0;0.9;0.93;0.96;1" dur="4s" repeatCount="indefinite"/></circle>
-  <circle cx="118" cy="127" r="3.5" fill="#fff"><animate attributeName="opacity" values="1;1;0;1;1" keyTimes="0;0.9;0.93;0.96;1" dur="4s" repeatCount="indefinite"/></circle>
-  <path d="M78 152 C 86 172, 114 172, 122 152 Z" fill="#2a1410"/>
-  <path d="M90 164 C 96 170, 104 170, 110 164 C 106 160, 94 160, 90 164 Z" fill="#ff6f7d"/>
+    <g transform="translate(0 236) scale(0.037)">
+      <g><animateTransform attributeName="transform" type="translate" values="0 0;0 -80;0 0" dur="0.225s" repeatCount="indefinite"/>
+      <g transform="rotate(7 600 700)">
+  <g><rect x="425" y="1090" width="90" height="190" rx="45" fill="#ff4a1c"/><ellipse cx="490" cy="1275" rx="75" ry="34" fill="#e8380f"/><animateTransform attributeName="transform" type="rotate" dur="0.45s" repeatCount="indefinite" values="30 470 1110;-30 470 1110;30 470 1110"/></g><g><rect x="685" y="1090" width="90" height="190" rx="45" fill="#ff4a1c"/><ellipse cx="750" cy="1275" rx="75" ry="34" fill="#e8380f"/><animateTransform attributeName="transform" type="rotate" dur="0.45s" repeatCount="indefinite" values="-30 730 1110;30 730 1110;-30 730 1110"/></g>
+  <path d="M600 22 C 700 120, 805 190, 810 305 C 813 350, 800 390, 785 418 C 840 570, 1012 680, 1012 870 C 1012 1080, 860 1175, 600 1175 C 340 1175, 185 1080, 185 860 C 185 790, 220 740, 285 672 C 265 590, 270 520, 300 500 C 320 470, 350 475, 382 503 C 375 300, 440 150, 600 22 Z" fill="url(#fl-outer)"/>
+  <path d="M612 420 C 660 500, 760 560, 665 672 C 668 710, 690 740, 715 765 L 808 900 C 808 1030, 710 1090, 600 1090 C 490 1090, 392 1030, 392 900 L 482 745 C 515 640, 515 520, 612 420 Z" fill="url(#fl-inner)"/>
+  <ellipse cx="426" cy="808" rx="72" ry="93" fill="#33120a"><animate attributeName="ry" values="93;93;8;93;93" keyTimes="0;0.9;0.93;0.96;1" dur="4s" repeatCount="indefinite"/></ellipse>
+  <ellipse cx="774" cy="808" rx="72" ry="93" fill="#33120a"><animate attributeName="ry" values="93;93;8;93;93" keyTimes="0;0.9;0.93;0.96;1" dur="4s" repeatCount="indefinite"/></ellipse>
+  <circle cx="404" cy="772" r="21" fill="#fff"><animate attributeName="opacity" values="1;1;0;1;1" keyTimes="0;0.9;0.93;0.96;1" dur="4s" repeatCount="indefinite"/></circle>
+  <circle cx="752" cy="772" r="21" fill="#fff"><animate attributeName="opacity" values="1;1;0;1;1" keyTimes="0;0.9;0.93;0.96;1" dur="4s" repeatCount="indefinite"/></circle>
+  <path d="M438 905 Q600 990 760 905 C 745 1075, 455 1075, 438 905 Z" fill="#3d0a0a"/>
+  <rect x="533" y="992" width="134" height="64" rx="28" fill="#ff6b5a" clip-path="url(#fl-mouth)"/>
+  <g><rect x="171" y="820" width="68" height="200" rx="34" fill="#ff7a12"/><circle cx="205" cy="1020" r="44" fill="#ff8f1f"/><animateTransform attributeName="transform" type="rotate" dur="0.45s" repeatCount="indefinite" values="-35 205 840;35 205 840;-35 205 840"/></g><g><rect x="961" y="820" width="68" height="200" rx="34" fill="#ff7a12"/><circle cx="995" cy="1020" r="44" fill="#ff8f1f"/><animateTransform attributeName="transform" type="rotate" dur="0.45s" repeatCount="indefinite" values="35 995 840;-35 995 840;35 995 840"/></g>
 </g></g>
     </g>
   </g>

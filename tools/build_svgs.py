@@ -16,59 +16,51 @@ MONO = "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
 
 
 
-# Flamey, as drawn for the Mile A Day merch (shop/components/designs.tsx, FlameyShape).
-# 200 x 232 units. Arms and legs are separate so they can move.
-COCOA = "#2a1410"
+# Flamey, matching the Mile A Day app's mascot (FlameBuddyFigure.swift).
+# Drawn in a 1200 x 1240 box; the body spans x 185-1012, y 22-1175.
 FLAMEY_DEFS = """
-  <linearGradient id="flamey-body" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#ffe25a"/><stop offset="0.45" stop-color="#ff9a2e"/><stop offset="1" stop-color="#ff4b24"/>
+  <linearGradient id="fl-outer" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#ffef4a"/><stop offset="0.5" stop-color="#ff9500"/><stop offset="1" stop-color="#ff3a1a"/>
   </linearGradient>
-  <linearGradient id="flamey-core" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#fff3a0"/><stop offset="1" stop-color="#ffc24a"/>
-  </linearGradient>"""
+  <linearGradient id="fl-inner" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#ffe95a"/><stop offset="1" stop-color="#ff9a26"/>
+  </linearGradient>
+  <clipPath id="fl-mouth"><path d="M438 905 Q600 990 760 905 C 745 1075, 455 1075, 438 905 Z"/></clipPath>"""
+
+FLAMEY_OUTER = ("M600 22 C 700 120, 805 190, 810 305 C 813 350, 800 390, 785 418 C 840 570, 1012 680, 1012 870 "
+                "C 1012 1080, 860 1175, 600 1175 C 340 1175, 185 1080, 185 860 C 185 790, 220 740, 285 672 "
+                "C 265 590, 270 520, 300 500 C 320 470, 350 475, 382 503 C 375 300, 440 150, 600 22 Z")
+FLAMEY_INNER = ("M612 420 C 660 500, 760 560, 665 672 C 668 710, 690 740, 715 765 L 808 900 "
+                "C 808 1030, 710 1090, 600 1090 C 490 1090, 392 1030, 392 900 L 482 745 C 515 640, 515 520, 612 420 Z")
 
 
 def flamey(mode="stand", tempo=0.45):
-    """mode: "wave" (right arm waves) or "run" (legs and arms swing)."""
-    def leg(cx, phase):
-        body = (f'<rect x="{cx - 13}" y="176" width="26" height="50" rx="13" fill="#ff5a2a"/>'
-                f'<ellipse cx="{cx}" cy="226" rx="20" ry="9" fill="#ff4b24"/>')
-        if mode != "run":
-            return f"<g>{body}</g>"
-        a, b = (-28, 28) if phase else (28, -28)
-        return (f'<g>{body}<animateTransform attributeName="transform" type="rotate" dur="{tempo}s" repeatCount="indefinite" '
-                f'values="{a} {cx} 180;{b} {cx} 180;{a} {cx} 180"/></g>')
-
-    def arm(side, phase):
-        if side == "l":
-            path, hand, pivot = "M44 132 C 30 118, 26 100, 30 88", (30, 84), (44, 132)
-        else:
-            path, hand, pivot = "M156 132 C 170 118, 174 100, 170 88", (170, 84), (156, 132)
-        body = (f'<path d="{path}" stroke="#ff7a2a" stroke-width="18" stroke-linecap="round" fill="none"/>'
-                f'<circle cx="{hand[0]}" cy="{hand[1]}" r="13" fill="#ff9a3a"/>')
-        if mode == "wave" and side == "r":
-            anim = (f'<animateTransform attributeName="transform" type="rotate" dur="2.4s" repeatCount="indefinite" '
-                    f'keyTimes="0;0.12;0.24;0.36;0.48;1" values="0 {pivot[0]} {pivot[1]};22 {pivot[0]} {pivot[1]};-6 {pivot[0]} {pivot[1]};22 {pivot[0]} {pivot[1]};0 {pivot[0]} {pivot[1]};0 {pivot[0]} {pivot[1]}"/>')
-        elif mode == "run":
-            a, b = (-20, 20) if phase else (20, -20)
-            anim = (f'<animateTransform attributeName="transform" type="rotate" dur="{tempo}s" repeatCount="indefinite" '
-                    f'values="{a} {pivot[0]} {pivot[1]};{b} {pivot[0]} {pivot[1]};{a} {pivot[0]} {pivot[1]}"/>')
-        else:
-            anim = ""
-        return f"<g>{body}{anim}</g>"
-
-    lean = ' transform="rotate(8 100 120)"' if mode == "run" else ""
+    """mode "stand": bob and blink. mode "run": legs and arms swing too."""
+    blink = 'keyTimes="0;0.9;0.93;0.96;1" dur="4s" repeatCount="indefinite"'
+    face = f"""
+  <ellipse cx="426" cy="808" rx="72" ry="93" fill="#33120a"><animate attributeName="ry" values="93;93;8;93;93" {blink}/></ellipse>
+  <ellipse cx="774" cy="808" rx="72" ry="93" fill="#33120a"><animate attributeName="ry" values="93;93;8;93;93" {blink}/></ellipse>
+  <circle cx="404" cy="772" r="21" fill="#fff"><animate attributeName="opacity" values="1;1;0;1;1" {blink}/></circle>
+  <circle cx="752" cy="772" r="21" fill="#fff"><animate attributeName="opacity" values="1;1;0;1;1" {blink}/></circle>
+  <path d="M438 905 Q600 990 760 905 C 745 1075, 455 1075, 438 905 Z" fill="#3d0a0a"/>
+  <rect x="533" y="992" width="134" height="64" rx="28" fill="#ff6b5a" clip-path="url(#fl-mouth)"/>"""
+    limbs_back = limbs_front = ""
+    if mode == "run":
+        def swing(cx, cy, a):
+            return (f'<animateTransform attributeName="transform" type="rotate" dur="{tempo}s" repeatCount="indefinite" '
+                    f'values="{a} {cx} {cy};{-a} {cx} {cy};{a} {cx} {cy}"/>')
+        leg = lambda cx, a: (f'<g><rect x="{cx - 45}" y="1090" width="90" height="190" rx="45" fill="#ff4a1c"/>'
+                             f'<ellipse cx="{cx + 20}" cy="1275" rx="75" ry="34" fill="#e8380f"/>{swing(cx, 1110, a)}</g>')
+        arm = lambda cx, cy, a: (f'<g><rect x="{cx - 34}" y="{cy}" width="68" height="200" rx="34" fill="#ff7a12"/>'
+                                 f'<circle cx="{cx}" cy="{cy + 200}" r="44" fill="#ff8f1f"/>{swing(cx, cy + 20, a)}</g>')
+        limbs_back = leg(470, 30) + leg(730, -30)
+        limbs_front = arm(205, 820, -35) + arm(995, 820, 35)
+    lean = ' transform="rotate(7 600 700)"' if mode == "run" else ""
     return f"""<g{lean}>
-  {leg(79, 0)}{leg(121, 1)}
-  {arm("l", 1)}{arm("r", 0)}
-  <path d="M100 6 C 128 40, 168 76, 166 136 C 164 176, 136 194, 100 194 C 64 194, 36 176, 34 136 C 32 104, 46 84, 60 70 C 62 88, 68 98, 76 102 C 72 66, 82 36, 100 6 Z" fill="url(#flamey-body)" stroke="#fff" stroke-opacity="0.35" stroke-width="3"/>
-  <path d="M100 66 C 112 86, 124 104, 120 128 C 116 144, 84 144, 80 128 C 76 108, 90 90, 100 66 Z" fill="url(#flamey-core)"/>
-  <ellipse cx="78" cy="132" rx="11" ry="13" fill="{COCOA}"><animate attributeName="ry" values="13;13;1.5;13;13" keyTimes="0;0.9;0.93;0.96;1" dur="4s" repeatCount="indefinite"/></ellipse>
-  <ellipse cx="122" cy="132" rx="11" ry="13" fill="{COCOA}"><animate attributeName="ry" values="13;13;1.5;13;13" keyTimes="0;0.9;0.93;0.96;1" dur="4s" repeatCount="indefinite"/></ellipse>
-  <circle cx="74" cy="127" r="3.5" fill="#fff"><animate attributeName="opacity" values="1;1;0;1;1" keyTimes="0;0.9;0.93;0.96;1" dur="4s" repeatCount="indefinite"/></circle>
-  <circle cx="118" cy="127" r="3.5" fill="#fff"><animate attributeName="opacity" values="1;1;0;1;1" keyTimes="0;0.9;0.93;0.96;1" dur="4s" repeatCount="indefinite"/></circle>
-  <path d="M78 152 C 86 172, 114 172, 122 152 Z" fill="{COCOA}"/>
-  <path d="M90 164 C 96 170, 104 170, 110 164 C 106 160, 94 160, 90 164 Z" fill="#ff6f7d"/>
+  {limbs_back}
+  <path d="{FLAMEY_OUTER}" fill="url(#fl-outer)"/>
+  <path d="{FLAMEY_INNER}" fill="url(#fl-inner)"/>{face}
+  {limbs_front}
 </g>"""
 
 
@@ -132,7 +124,7 @@ def fetch_live():
 
 def header(live):
     W, H = 1200, 360
-    omw_w = 40  # running Flamey width at 0.2 scale
+    omw_w = 44  # running Flamey width at 0.037 scale
     line_y, x0, x1 = 284, 64, W - 64
     run = 14
 
@@ -197,9 +189,9 @@ def header(live):
   </g>
   {rotating(taglines, 66, 168, 17, "#8f8780")}
   {"".join(chips_svg)}
-  <g transform="translate(948 40) scale(0.72)">
-    <g><animateTransform attributeName="transform" type="translate" values="0 0;0 -8;0 0" dur="2.4s" repeatCount="indefinite"/>
-    {flamey("wave")}</g>
+  <g transform="translate(936 36) scale(0.14)">
+    <g><animateTransform attributeName="transform" type="translate" values="0 0;0 -50;0 0" dur="2.4s" repeatCount="indefinite"/>
+    {flamey("stand")}</g>
   </g>
 
   <!-- the mile: Flamey runs it, the trail fills in behind him -->
@@ -212,8 +204,8 @@ def header(live):
   <g>
     <animateTransform attributeName="transform" type="translate" values="{x0 - omw_w / 2:.0f} 0;{x1 - omw_w / 2:.0f} 0;{x1 - omw_w / 2:.0f} 0;{x0 - omw_w / 2:.0f} 0" keyTimes="0;0.85;0.97;1" dur="{run}s" repeatCount="indefinite"/>
     <animate attributeName="opacity" values="1;1;1;0;1" keyTimes="0;0.85;0.95;0.97;1" dur="{run}s" repeatCount="indefinite"/>
-    <g transform="translate(0 {line_y - 46}) scale(0.2)">
-      <g><animateTransform attributeName="transform" type="translate" values="0 0;0 -14;0 0" dur="0.225s" repeatCount="indefinite"/>
+    <g transform="translate(0 {line_y - 48}) scale(0.037)">
+      <g><animateTransform attributeName="transform" type="translate" values="0 0;0 -80;0 0" dur="0.225s" repeatCount="indefinite"/>
       {flamey("run")}</g>
     </g>
   </g>
