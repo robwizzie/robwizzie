@@ -65,12 +65,12 @@ def flamey(mode="stand", tempo=0.45):
 
 
 def chip(x, y, text, accent):
-    w = round(len(text) * 8.6 + 34)
+    w = round(len(text) * 7.6 + 44)
     return (
         f'<g transform="translate({x} {y})">'
         f'<rect width="{w}" height="34" rx="17" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.12"/>'
-        f'<circle cx="17" cy="17" r="4" fill="{accent}"/>'
-        f'<text x="29" y="22.5" font-family="{FONT}" font-size="15" fill="#e7e1db">{escape(text)}</text></g>',
+        f'<circle cx="18" cy="17" r="4" fill="{accent}"/>'
+        f'<text x="{(w + 14) / 2:.1f}" y="22" text-anchor="middle" font-family="{FONT}" font-size="15" fill="#e7e1db">{escape(text)}</text></g>',
         w,
     )
 

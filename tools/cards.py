@@ -93,6 +93,14 @@ def desktop(bg, files):
 
 def fit(bg, files):
     im = Image.open(files[0]).convert("RGBA")
+    # A pre-made strip on a flat background: drop that background so only its phones count.
+    key = im.getpixel((6, im.height // 2))[:3]
+    px = im.load()
+    for y in range(im.height):
+        for x in range(im.width):
+            r, g, b, a = px[x, y]
+            if abs(r - key[0]) + abs(g - key[1]) + abs(b - key[2]) < 24:
+                px[x, y] = (r, g, b, 0)
     k = min((W - 40) / im.width, (H - 40) / im.height)
     im = im.resize((round(im.width * k), round(im.height * k)), Image.LANCZOS)
     bg.alpha_composite(im, ((W - im.width) // 2, (H - im.height) // 2))
@@ -106,10 +114,29 @@ def fill(bg, files):
     bg.alpha_composite(im.crop((l, t, l + W, t + H)).convert("RGBA"))
 
 
+PAD = 60  # identical inset on every side of every card
+
+
+def normalize(layer):
+    """Scale and center whatever was drawn so its content sits PAD from the card edges."""
+    alpha = layer.getchannel("A").point(lambda a: 255 if a > 200 else 0)
+    l, t, r, b = alpha.getbbox()
+    k = min((W - 2 * PAD) / (r - l), (H - 2 * PAD) / (b - t))
+    m = 40  # keep the drop shadows
+    crop = layer.crop((l - m, t - m, r + m, b + m))
+    crop = crop.resize((round(crop.width * k), round(crop.height * k)), Image.LANCZOS)
+    out = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    cw, ch = (r - l) * k, (b - t) * k
+    out.alpha_composite(crop, (round((W - cw) / 2 - m * k), round((H - ch) / 2 - m * k)))
+    return out
+
+
 if __name__ == "__main__":
     name, style, top, bot, *files = sys.argv[1:]
     bg = gradient(top, bot)
-    {"phones": phones, "desktop": desktop, "fill": fill, "fit": fit}[style](bg, files)
+    layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    {"phones": phones, "desktop": desktop, "fill": fill, "fit": fit}[style](layer, files)
+    bg.alpha_composite(normalize(layer))
     bg = rounded(bg, 28)
     OUT.mkdir(parents=True, exist_ok=True)
     out = OUT / f"{name}.png"
