@@ -200,16 +200,18 @@ def header(live):
     {flamey("stand")}</g>
   </g>
 
-  <!-- the mile: Flamey runs it, the trail fills in behind him -->
+  <!-- the mile: Flamey runs it at a steady pace, keeps going through the finish while he fades,
+       then jogs back in from the left edge at the same speed, so he never stops or jumps -->
   <rect x="{x0}" y="{line_y - 1}" width="{x1 - x0}" height="2" rx="1" fill="#ffffff" fill-opacity="0.12"/>
   {ticks}
   <text x="{x1}" y="{line_y - 12}" text-anchor="end" font-family="{MONO}" font-size="12" fill="#ffffff" fill-opacity="0.35">1 MI</text>
   <rect x="{x0}" y="{line_y - 1}" height="2" rx="1" fill="url(#trail)" width="0">
-    <animate attributeName="width" values="0;{x1 - x0};{x1 - x0};0" keyTimes="0;0.85;0.97;1" dur="{run}s" repeatCount="indefinite"/>
+    <animate attributeName="width" values="0;{x1 - x0};{x1 - x0};0;0" keyTimes="0;0.9;0.93;0.9301;1" dur="{run}s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;1;0;1;1" keyTimes="0;0.9;0.93;0.9301;1" dur="{run}s" repeatCount="indefinite"/>
   </rect>
   <g>
-    <animateTransform attributeName="transform" type="translate" values="{x0 - omw_w / 2:.0f} 0;{x1 - omw_w / 2:.0f} 0;{x1 - omw_w / 2:.0f} 0;{x0 - omw_w / 2:.0f} 0" keyTimes="0;0.85;0.97;1" dur="{run}s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="1;1;1;0;1" keyTimes="0;0.85;0.95;0.97;1" dur="{run}s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="{x0 - omw_w / 2:.0f} 0;{x1 - omw_w / 2:.0f} 0;{x1 - omw_w / 2 + 36:.0f} 0;{x0 - omw_w / 2 - 80:.0f} 0;{x0 - omw_w / 2:.0f} 0" keyTimes="0;0.9;0.93;0.9301;1" dur="{run}s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;1;0;0;1;1" keyTimes="0;0.9;0.93;0.9301;0.98;1" dur="{run}s" repeatCount="indefinite"/>
     <g transform="translate(0 {line_y - 48}) scale(0.037)">
       <g><animateTransform attributeName="transform" type="translate" values="0 0;0 -80;0 0" dur="0.225s" repeatCount="indefinite"/>
       {flamey("run")}</g>

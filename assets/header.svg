@@ -46,16 +46,18 @@
 </g></g>
   </g>
 
-  <!-- the mile: Flamey runs it, the trail fills in behind him -->
+  <!-- the mile: Flamey runs it at a steady pace, keeps going through the finish while he fades,
+       then jogs back in from the left edge at the same speed, so he never stops or jumps -->
   <rect x="64" y="283" width="1072" height="2" rx="1" fill="#ffffff" fill-opacity="0.12"/>
   <rect x="63.2" y="279" width="1.5" height="10" fill="#ffffff" fill-opacity="0.25"/><rect x="331.2" y="279" width="1.5" height="10" fill="#ffffff" fill-opacity="0.25"/><rect x="599.2" y="279" width="1.5" height="10" fill="#ffffff" fill-opacity="0.25"/><rect x="867.2" y="279" width="1.5" height="10" fill="#ffffff" fill-opacity="0.25"/><rect x="1135.2" y="279" width="1.5" height="10" fill="#ffffff" fill-opacity="0.25"/>
   <text x="1136" y="272" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#ffffff" fill-opacity="0.35">1 MI</text>
   <rect x="64" y="283" height="2" rx="1" fill="url(#trail)" width="0">
-    <animate attributeName="width" values="0;1072;1072;0" keyTimes="0;0.85;0.97;1" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="width" values="0;1072;1072;0;0" keyTimes="0;0.9;0.93;0.9301;1" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;1;0;1;1" keyTimes="0;0.9;0.93;0.9301;1" dur="14s" repeatCount="indefinite"/>
   </rect>
   <g>
-    <animateTransform attributeName="transform" type="translate" values="42 0;1114 0;1114 0;42 0" keyTimes="0;0.85;0.97;1" dur="14s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="1;1;1;0;1" keyTimes="0;0.85;0.95;0.97;1" dur="14s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="42 0;1114 0;1150 0;-38 0;42 0" keyTimes="0;0.9;0.93;0.9301;1" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;1;0;0;1;1" keyTimes="0;0.9;0.93;0.9301;0.98;1" dur="14s" repeatCount="indefinite"/>
     <g transform="translate(0 236) scale(0.037)">
       <g><animateTransform attributeName="transform" type="translate" values="0 0;0 -80;0 0" dur="0.225s" repeatCount="indefinite"/>
       <g transform="rotate(7 600 700)">
