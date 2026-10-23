@@ -4,7 +4,7 @@ name: Refresh header stats
 # and the Top Dawgs record, then commits it if anything changed.
 on:
   schedule:
-    - cron: "17 */3 * * *" # every 3 hours
+    - cron: "17 14 1 * *" # once a month, on the 1st
   workflow_dispatch:
   push:
     branches: [main]

@@ -71,4 +71,4 @@ I'm a full-stack and iOS developer in South Jersey. I lead development at a test
 
 <br/>
 
-<sub>The numbers in the header are live: they refresh every few hours from the Mile A Day API and my pool team's stats.</sub>
+<sub>The numbers in the header are live: they refresh once a month from the Mile A Day API and my pool team's stats.</sub>
